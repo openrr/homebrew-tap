@@ -3,17 +3,17 @@
 class UrdfViz < Formula
   desc "URDF visualizer"
   homepage "https://github.com/openrr/urdf-viz"
-  version "0.28.0"
+  version "0.28.1"
   license "Apache-2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/openrr/urdf-viz/releases/download/v0.28.0/urdf-viz-x86_64-apple-darwin.tar.gz"
-    sha256 "9d85f5e26dcce033e1dee0f301aee29f0d35a45cda305998b6a430b746100f96"
+    url "https://github.com/openrr/urdf-viz/releases/download/v0.28.1/urdf-viz-x86_64-apple-darwin.tar.gz"
+    sha256 "257166bf7b89bfea8ffcda42a63400c86d226be2cc9b8f5fb82c8a4970b6f6a7"
   end
   if OS.linux?
-    url "https://github.com/openrr/urdf-viz/releases/download/v0.28.0/urdf-viz-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "444329734825f1d9ad2b82f1714f6ecdc3706ed6ae8910f7ebd13754d3044f7d"
+    url "https://github.com/openrr/urdf-viz/releases/download/v0.28.1/urdf-viz-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "a01ca5672b6ad915181ae891107aeba54a8be37ef6e0b25ff6bca1ef00de8d70"
   end
 
   def install
