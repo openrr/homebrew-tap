@@ -7,13 +7,17 @@ class UrdfViz < Formula
   license "Apache-2.0"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/openrr/urdf-viz/releases/download/v0.30.0/urdf-viz-x86_64-apple-darwin.tar.gz"
-    sha256 "4d510ff39db6576ef8e05db8834371e29f0a58844d8c8ae629901586d2170ee7"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/openrr/urdf-viz/releases/download/v0.30.0/urdf-viz-x86_64-apple-darwin.tar.gz"
+      sha256 "4d510ff39db6576ef8e05db8834371e29f0a58844d8c8ae629901586d2170ee7"
+    end
   end
-  if OS.linux?
-    url "https://github.com/openrr/urdf-viz/releases/download/v0.30.0/urdf-viz-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "f6ffca32843e41a3a80cf75d02ea6950416d309e6aa08b9733307394d1115317"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/openrr/urdf-viz/releases/download/v0.30.0/urdf-viz-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "f6ffca32843e41a3a80cf75d02ea6950416d309e6aa08b9733307394d1115317"
+    end
   end
 
   def install
