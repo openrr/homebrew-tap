@@ -5,7 +5,6 @@ class UrdfViz < Formula
   homepage "https://github.com/openrr/urdf-viz"
   version "0.31.0"
   license "Apache-2.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
