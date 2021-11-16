@@ -3,19 +3,19 @@
 class UrdfViz < Formula
   desc "URDF visualizer"
   homepage "https://github.com/openrr/urdf-viz"
-  version "0.31.0"
+  version "0.32.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/openrr/urdf-viz/releases/download/v0.31.0/urdf-viz-x86_64-apple-darwin.tar.gz"
-      sha256 "f1b1f01c04aefd55c729eb37f70ee0aae92ff195c57bbb1c5bb65491062ae360"
+      url "https://github.com/openrr/urdf-viz/releases/download/v0.32.0/urdf-viz-x86_64-apple-darwin.tar.gz"
+      sha256 "047146f1a7841484219e3ca9f0067a495adf8840310f24ad664d9062529019d9"
     end
   end
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/openrr/urdf-viz/releases/download/v0.31.0/urdf-viz-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "291c5b4fcf502e81eaf4717ec1e3546025d4a2516f48624abdeef7da3232b9dc"
+      url "https://github.com/openrr/urdf-viz/releases/download/v0.32.0/urdf-viz-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "94782ffaba4086e3e60c423f3a57dcdf58a68676778d540ac78168de22fc72ef"
     end
   end
 
