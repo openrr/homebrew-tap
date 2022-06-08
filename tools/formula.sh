@@ -41,10 +41,8 @@ class ${class} < Formula
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "${mac_url}"
-      sha256 "${mac_sha%  *}"
-    end
+    url "${mac_url}"
+    sha256 "${mac_sha%  *}"
   end
   on_linux do
     if Hardware::CPU.intel?

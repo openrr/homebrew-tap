@@ -7,10 +7,8 @@ class UrdfViz < Formula
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/openrr/urdf-viz/releases/download/v0.37.0/urdf-viz-x86_64-apple-darwin.tar.gz"
-      sha256 "351793779a8e6783f5cff7c471db51a957d5a46209d479029d1f09529292d82c"
-    end
+    url "https://github.com/openrr/urdf-viz/releases/download/v0.37.0/urdf-viz-x86_64-apple-darwin.tar.gz"
+    sha256 "351793779a8e6783f5cff7c471db51a957d5a46209d479029d1f09529292d82c"
   end
   on_linux do
     if Hardware::CPU.intel?
