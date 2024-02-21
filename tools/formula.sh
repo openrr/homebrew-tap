@@ -41,7 +41,11 @@ class ${class} < Formula
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
+    if Hardware::CPU.arm?
+      # TODO: distribute aarch64 binary
+      url "${mac_url}"
+      sha256 "${mac_sha%  *}"
+    else
       url "${mac_url}"
       sha256 "${mac_sha%  *}"
     end
