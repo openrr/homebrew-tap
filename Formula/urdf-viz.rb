@@ -7,7 +7,11 @@ class UrdfViz < Formula
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
+    if Hardware::CPU.arm?
+      # TODO: distribute aarch64 binary
+      url "https://github.com/openrr/urdf-viz/releases/download/v0.45.0/urdf-viz-x86_64-apple-darwin.tar.gz"
+      sha256 "dbb0b460ec1f576a2c4921d9af7eb451a95a63c2f2b75fcf8569bc09ce51b3e5"
+    else
       url "https://github.com/openrr/urdf-viz/releases/download/v0.45.0/urdf-viz-x86_64-apple-darwin.tar.gz"
       sha256 "dbb0b460ec1f576a2c4921d9af7eb451a95a63c2f2b75fcf8569bc09ce51b3e5"
     end

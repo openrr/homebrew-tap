@@ -1,3 +1,4 @@
+aarch
 euxo
 linuxbrew
 openrr
