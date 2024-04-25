@@ -1,6 +1,7 @@
-#!/bin/bash
-set -euxo pipefail
+#!/usr/bin/env bash
+set -eEuo pipefail
 IFS=$'\n\t'
+cd "$(dirname "$0")"/..
 
 # Audit formulas.
 #
