@@ -3,7 +3,6 @@ connrefused
 euxo
 linuxbrew
 openrr
-proto
 tlsv
 untap
 urdf
