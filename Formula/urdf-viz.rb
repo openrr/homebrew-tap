@@ -3,22 +3,22 @@
 class UrdfViz < Formula
   desc "URDF visualizer"
   homepage "https://github.com/openrr/urdf-viz"
-  version "0.45.1"
+  version "0.46.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/openrr/urdf-viz/releases/download/v0.45.1/urdf-viz-aarch64-apple-darwin.tar.gz"
-      sha256 "cc39ec22339b97e14dffbe604931b71054c795450709bf51a3e0d443de0a5540"
+      url "https://github.com/openrr/urdf-viz/releases/download/v0.46.0/urdf-viz-aarch64-apple-darwin.tar.gz"
+      sha256 "e12a55e9fb359db759578d7fe6c1368835c342aa6bef7cafa3ab40f311951ced"
     else
-      url "https://github.com/openrr/urdf-viz/releases/download/v0.45.1/urdf-viz-x86_64-apple-darwin.tar.gz"
-      sha256 "eaa056c701af695b90f6f4b123c15bf254aaf6d728e518edc3ce185438bf51a7"
+      url "https://github.com/openrr/urdf-viz/releases/download/v0.46.0/urdf-viz-x86_64-apple-darwin.tar.gz"
+      sha256 "b508c529c091a590a6bc0130467a6457e931fbc42a73f62df9fe0388f913035b"
     end
   end
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/openrr/urdf-viz/releases/download/v0.45.1/urdf-viz-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "9fdbd04e5ee132854b21e552d9d47bd53e027b300f653571e55023f42529f834"
+      url "https://github.com/openrr/urdf-viz/releases/download/v0.46.0/urdf-viz-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "7bc8198e46a36b423856ddf58f0253b1b55aa1ad3aea9dad61f8174266913973"
     end
   end
 
