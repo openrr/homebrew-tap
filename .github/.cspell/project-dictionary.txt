@@ -1,6 +1,4 @@
-aarch
 connrefused
-euxo
 linuxbrew
 openrr
 tlsv
