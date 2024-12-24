@@ -41,14 +41,17 @@ jobs:
   formula:
     runs-on: ubuntu-20.04
     timeout-minutes: 60
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - run: tools/formula.sh
       - run: git add -N . && git diff --exit-code
-        if: github.event_name != 'schedule'
+        if: (!(github.repository_owner == 'openrr' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main')))
       - id: diff
         run: ci/formula.sh
-        if: github.event_name == 'schedule'
+        if: github.repository_owner == 'openrr' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main')
       - uses: peter-evans/create-pull-request@v7
         with:
           title: Update formula
@@ -58,8 +61,8 @@ jobs:
 
             [1]: https://github.com/peter-evans/create-pull-request
             [2]: https://github.com/peter-evans/create-pull-request/blob/main/docs/concepts-guidelines.md#workarounds-to-trigger-further-workflow-runs
-          branch: formula
-        if: github.event_name == 'schedule' && steps.diff.outputs.success == 'false'
+          branch: update-formula
+        if: github.repository_owner == 'openrr' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main') && steps.diff.outputs.success == 'false'
 
   spell-check:
     runs-on: ubuntu-latest
