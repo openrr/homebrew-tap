@@ -30,7 +30,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       # https://github.com/actions/runner-images/issues/6283
       - run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
         if: startsWith(matrix.os, 'ubuntu')
@@ -45,7 +45,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: tools/formula.sh
       - run: git add -N . && git diff --exit-code
         if: (!(github.repository_owner == 'openrr' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main')))
@@ -71,7 +71,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: echo "REMOVE_UNUSED_WORDS=1" >>"${GITHUB_ENV}"
         if: github.repository_owner == 'openrr' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main')
       - run: tools/spell-check.sh
