@@ -49,7 +49,7 @@ jobs:
       - run: git add -N . && git diff --exit-code
         if: (!(github.repository_owner == 'openrr' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main')))
       - id: diff
-        run: ci/formula.sh
+        run: tools/ci/formula.sh
         if: github.repository_owner == 'openrr' && (github.event_name == 'schedule' || github.event_name == 'push' && github.ref == 'refs/heads/main')
       - uses: peter-evans/create-pull-request@v7
         with:
