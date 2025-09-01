@@ -27,6 +27,6 @@ class UrdfViz < Formula
   end
 
   test do
-    system "#{bin}/urdf-viz", "--version"
+    system bin/"urdf-viz", "--version"
   end
 end
