@@ -15,30 +15,28 @@ if [[ -z "${CI:-}" ]]; then
   bail "this script is intended to call on CI"
 fi
 
-tap_name=taiki-e/test
+tap_name=openrr/test
 formulas=()
 for formula in Formula/*.rb; do
   name="${formula##*/}"
-  formulas+=("${tap_name}/${name%.*}")
+  formulas+=("${name%.*}")
 done
 
 x brew tap-new --no-git "${tap_name}"
 x cp -- Formula/*.rb "$(brew --repo "${tap_name}")"/Formula
 
 for formula in "${formulas[@]}"; do
-  x brew install "${formula}"
+  x brew install "${tap_name}/${formula}"
+  x "${formula}" --version
 done
 for formula in "${formulas[@]}"; do
-  x brew test --verbose "${formula}"
+  x brew test --verbose "${tap_name}/${formula}"
 done
 for formula in "${formulas[@]}"; do
-  x brew uninstall "${formula}"
+  x brew uninstall "${tap_name}/${formula}"
 done
-# 4.6.6 has useless "Stable: `version ...` is redundant with version scanned from URL" error
-if ! brew --version | grep -Fq '4.6.6'; then
-  for formula in "${formulas[@]}"; do
-    x brew audit --strict "${formula}"
-  done
-fi
+for formula in "${formulas[@]}"; do
+  x brew audit --strict "${tap_name}/${formula}"
+done
 
 x brew untap "${tap_name}"

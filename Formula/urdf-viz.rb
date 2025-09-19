@@ -3,7 +3,7 @@
 class UrdfViz < Formula
   desc "URDF visualizer"
   homepage "https://github.com/openrr/urdf-viz"
-  version "0.46.1"
+  # version "0.46.1"
   license "Apache-2.0"
 
   on_macos do
