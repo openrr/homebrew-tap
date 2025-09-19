@@ -16,9 +16,6 @@ packages=(
 descriptions=(
     "URDF visualizer"
 )
-tests=(
-    'system bin/"urdf-viz", "--version"'
-)
 
 retry() {
   for i in {1..10}; do
@@ -66,7 +63,7 @@ for i in "${!packages[@]}"; do
 class ${class} < Formula
   desc "${descriptions[${i}]}"
   homepage "https://github.com/${owner}/${package}"
-  version "${tag#v}"
+  # version "${tag#v}"
   license "Apache-2.0"
 
   on_macos do
@@ -90,7 +87,7 @@ class ${class} < Formula
   end
 
   test do
-    ${tests[${i}]}
+    system bin/"${package}", "--version"
   end
 end
 EOF
